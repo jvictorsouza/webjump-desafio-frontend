@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
-  width: calc(30% - 20px);
+  max-width: 30%;
+  min-width: 30%;
 `;
 
 export const HomeStyles = styled.div`
@@ -84,6 +85,7 @@ export const FilterCamp = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
+  min-width: 100%;
 
   span{
     font-size: 13px;
@@ -117,22 +119,19 @@ export const ButtonList: any = styled.button`
   }
 `;
 
-export const ColorPickerCamp = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 interface ColorPickerInteface {
   color: string
   isActive: boolean
 }
 
 export const ColorPicker:any = styled.div`
-  min-height: 15px;
-  min-width: 30px;
+  min-height: 20px;
+  min-width: 40px;
   background-color: ${ (picker:ColorPickerInteface) => picker.color };
   margin: 1px;
   border: ${ (picker:ColorPickerInteface) => picker.isActive ? '2px solid #231f20' : 'None' };
+  
+  text-align: center;
   :hover{
     cursor: pointer;
   }

@@ -101,7 +101,7 @@ export const InLineSpacedList = styled.div`
         font-weight: bold;
         align-self: center;
         font-size: 13px;
-        margin-right: 9%;
+        margin-right: 6%;
         white-space: nowrap;
 
         :last-child{
