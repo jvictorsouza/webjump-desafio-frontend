@@ -1,9 +1,5 @@
 import { observable, action } from "mobx";
-import {StrObjectArrayStr} from "../constants/constants"
-
-export interface StrObjectArrayBool {
-    [index: string]: Array<boolean>;
-}
+import {StrObjectArrayStr} from "../interfaces";
 
 export default class FilterStore {
     @observable

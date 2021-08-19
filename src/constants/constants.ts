@@ -1,12 +1,6 @@
+import {StrObjectStr, StrObjectArrayStr} from "../interfaces";
+
 export const NavListOptions: string[] = ['Página inicial', 'Camisetas', 'Calças', 'Sapatos', 'Contato' ]
-
-export interface StrObjectStr {
-    [index: string]: string;
-}
-
-export interface StrObjectArrayStr {
-    [index: string]: Array<string>;
-}
 
 export const NavListOptionsRoutes: StrObjectStr = {
     'Página inicial': '/home',
