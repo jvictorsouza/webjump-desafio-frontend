@@ -1,18 +1,37 @@
-import {StrObjectStr, StrObjectArrayStr} from "../interfaces";
+import {StrObjectStr, StrObjectObjectArrayStr} from "../interfaces";
 
-export const NavListOptions: string[] = ['Página inicial', 'Camisetas', 'Calças', 'Sapatos', 'Contato' ]
+export const NavListOptions: string[] = ['Página inicial', 'Camisetas', 'Calças', 'Calçados', 'Contato' ]
 
 export const NavListOptionsRoutes: StrObjectStr = {
     'Página inicial': '/home',
-    'Sapatos': '/shop/shoes',
+    'Camisetas': '/shop/tshirts',
+    'Calças': '/shop/pants',
+    'Calçados': '/shop/shoes',
 }
 
-export const FilterOptionsType: Array<string> = ['list', 'color_pallete', 'list']
+export const mapperColor: StrObjectStr = {
+    '#0c0d0d': 'Preta',
+    '#f36324': 'Laranja',
+    '#f3ec24': 'Amarela',
+    '#28a3aa': 'Azul',
+    '#e924f3': 'Rosa',
+    '#f5f5dc': 'Bege',
+    '#8a8a87': 'Cinza'
+}
 
-export const FilterOptions: StrObjectArrayStr = {
-    'Categorias': ['Roupas', 'Sapatos', 'Acessórios'],
-    'Cores': ['#cc0d1f','#f36324', '#28a3aa'],
-    'Tipo': ['Corrida', 'Caminhada', 'Casual', 'Social']
+export const FilterOptionsType: Array<Array<string>> = [['color_pallete'], ['list'], ['color_pallete', 'list']]
+
+export const FilterOptions: StrObjectObjectArrayStr = {
+    'Camisetas': {
+        'Cores': ['#0c0d0d', '#f36324', '#f3ec24', '#e924f3'],
+    },
+    'Calças': {
+        'Gênero': ['Masculino', 'Feminino']
+    },
+    'Calçados': {
+        'Cores': ['#0c0d0d', '#f36324', '#f3ec24', '#e924f3', '#8a8a87', '#28a3aa', '#f5f5dc'],
+        'Tipo': ['Corrida', 'Caminhada', 'Casual', 'Social']
+    }
 
 }
 

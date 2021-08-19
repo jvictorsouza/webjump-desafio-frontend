@@ -9,3 +9,7 @@ export interface StrObjectStr {
 export interface StrObjectArrayStr {
   [index: string]: Array<string>;
 }
+
+export interface StrObjectObjectArrayStr {
+  [index: string]: StrObjectArrayStr;
+}

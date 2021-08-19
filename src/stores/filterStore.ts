@@ -4,7 +4,7 @@ import {StrObjectArrayStr} from "../interfaces";
 export default class FilterStore {
     @observable
     filterOptions: StrObjectArrayStr = {
-        'Categorias': [],
+        'Gênero': [],
         'Cores': [],
         'Tipo': []
     }
