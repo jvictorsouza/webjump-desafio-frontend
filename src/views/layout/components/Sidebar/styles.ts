@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
-  max-width: 30%;
-  min-width: 30%;
+  max-width: 35%;
+  min-width: 35%;
 `;
 
 export const HomeStyles = styled.div`

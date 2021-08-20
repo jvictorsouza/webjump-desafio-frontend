@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
                     <Outlet />
                 </Content>
             </StylesContainer>
-            <StylesFooter></StylesFooter>
+            <StylesFooter/>
 
         </Styles>
     );

@@ -7,7 +7,7 @@ export default {
     zero: "#231f20",
     one: "#ffffff", 
     two: "#cc0d1f",
-    three: "#28a3aa",
+    three: "#80bdb8",
     four: "#acacac",
     five: "#e2dedb",
     six: "#9a2e2a",

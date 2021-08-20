@@ -22,8 +22,8 @@ export const StylesContainer = styled.div`
 export const Content = styled.div`
   min-height: 75%;
   max-height: 75%;
-  min-width: 70%;
-  max-width: 70%;
+  min-width: 65%;
+  max-width: 65%;
 `;
 
 export const StylesFooter = styled.div`
