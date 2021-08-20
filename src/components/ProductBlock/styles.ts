@@ -38,7 +38,9 @@ export const SpecialPrice = styled.label`
     text-decoration: line-through;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.four};
+    margin: 0px;
     margin-right: 5px;
+    
 `;
 
 export const Price = styled.span`
