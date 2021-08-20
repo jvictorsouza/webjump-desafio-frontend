@@ -1,4 +1,4 @@
-import {StrObjectStr, StrObjectObjectArrayStr} from "../interfaces";
+import { StrObjectStr, StrObjectNmb, StrObjectObjectArrayStr } from "../interfaces";
 
 export const NavListOptions: string[] = ['Página inicial', 'Camisetas', 'Calças', 'Calçados', 'Contato' ]
 
@@ -8,8 +8,13 @@ export const NavListOptionsRoutes: StrObjectStr = {
     'Calças': '/shop/pants',
     'Calçados': '/shop/shoes',
 }
+export const MapperProdutsIds: StrObjectNmb = {
+    'tshirts': 1,
+    'pants': 2,
+    'shoes': 3
+}
 
-export const mapperColor: StrObjectStr = {
+export const MapperColor: StrObjectStr = {
     '#0c0d0d': 'Preta',
     '#f36324': 'Laranja',
     '#f3ec24': 'Amarela',
@@ -26,11 +31,10 @@ export const FilterOptions: StrObjectObjectArrayStr = {
         'Cores': ['#0c0d0d', '#f36324', '#f3ec24', '#e924f3'],
     },
     'Calças': {
-        'Gênero': ['Masculino', 'Feminino']
+        'Gênero': ['Masculina', 'Feminina']
     },
     'Calçados': {
         'Cores': ['#0c0d0d', '#f36324', '#f3ec24', '#e924f3', '#8a8a87', '#28a3aa', '#f5f5dc'],
-        'Tipo': ['Corrida', 'Caminhada', 'Casual', 'Social']
     }
 
 }
