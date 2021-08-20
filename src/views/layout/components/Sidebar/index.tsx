@@ -5,7 +5,7 @@ import React, {
 } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FilterOptions, FilterOptionsType, NavListOptions, NavListOptionsRoutes } from "../../../../constants/constants";
+import { FilterOptions, FilterOptionsType, MapperColor, NavListOptions, NavListOptionsRoutes } from "../../../../constants/constants";
 import { HasThisRoute } from "../../../../helpers/routes";
 import { ToastError } from "../../../../helpers/toast";
 import { useStores } from "../../../../hooks/useStores";
@@ -15,7 +15,7 @@ import { ButtonList, ColorPicker, FilterCamp, HistoryRoutes, HomeStyles, ShopSty
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
-  const { filterStore } = useStores()
+  const { filterStore } = useStores();
   const location = useLocation();
   const [viewFilterOptions, setViewFilterOptions] = useState<StrObjectArrayStr>({});
   const [viewFilterTypeOptions, setViewFilterTypeOptions] = useState<Array<string>>([]);
@@ -73,8 +73,8 @@ const Sidebar: React.FC = () => {
                         <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" sx={{ maxWidth: '100%' }}>
                           {viewFilterOptions[option].map((color: string, index) => {
                             return (
-                              <Box p={0.01}>
-                                <ColorPicker key={`color_picker-${index}`} onClick={() => { filterStore.updateFilterCamp(option, color) }} color={color} isActive={filterStore.filterOptions[option].includes(color)} ></ColorPicker>
+                              <Box p={0.01} key={`box-color_picker-${index}`}>
+                                <ColorPicker key={`color_picker-${index}`} onClick={() => { filterStore.updateFilterCamp(option, MapperColor[color]) }} color={color} isActive={filterStore.filterOptions[option].includes(MapperColor[color])} ></ColorPicker>
                               </Box>
                             )
                           })}

@@ -13,7 +13,7 @@ const Layout: React.FC = () => {
             </StylesContainerHeader>
             <StylesContainer>
                 <Sidebar />
-                <Content>
+                <Content id="content-view">
                     <Outlet />
                 </Content>
             </StylesContainer>

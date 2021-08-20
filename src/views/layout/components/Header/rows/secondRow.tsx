@@ -2,6 +2,7 @@ import React, { useContext }  from 'react';
 import { InLineSpaceBetween } from '../styles';
 import { ThemeContext } from 'styled-components';
 import { Assets } from '../../../../../helpers/assets';
+import { ToastError } from '../../../../../helpers/toast';
 import { Input } from "reactstrap";
 
 const SecondRow: React.FC = () => {
@@ -13,7 +14,7 @@ const SecondRow: React.FC = () => {
                 <img alt='LogoHeader' src={Assets("/assets/images/logo.jpg")} height="50px" width="150px"/>
                 <div style={{display: "flex", flexDirection: "row"}}>
                     <Input/>
-                    <button>BUSCAR</button>
+                    <button onClick={()=>ToastError("Funcionalidade ainda não implementada")}>BUSCAR</button>
                 </div>
             </InLineSpaceBetween>    
         </div>
