@@ -1,7 +1,7 @@
 import Box from '@material-ui/core/Box';
 import { observer } from "mobx-react-lite";
 import React, {
-  useEffect, useLayoutEffect, useState
+  useEffect, useState
 } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -19,10 +19,6 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
   const [viewFilterOptions, setViewFilterOptions] = useState<StrObjectArrayStr>({});
   const [viewFilterTypeOptions, setViewFilterTypeOptions] = useState<Array<string>>([]);
-
-  useLayoutEffect(() => {
-
-  }, []);
 
   useEffect(() => {
     if (location.pathname !== '/home') {
@@ -60,35 +56,36 @@ const Sidebar: React.FC = () => {
           </HistoryRoutes>
           <FilterCamp>
             <span>FILTRE POR</span>
-            {Object.keys(viewFilterOptions).map((option, index) => {
-              return (
-                viewFilterTypeOptions !== undefined && viewFilterTypeOptions !== null ? (
-                  <>
-                    <span key={`title-${option}`}>{option.toLocaleUpperCase()}</span>
-                    {viewFilterTypeOptions[index] === 'list' ? (
-                      viewFilterOptions[option].map((item, index) => {
-                        return (
-                          <li key={`item-${item}`}><ButtonList key={`button-${item}`} isActive={filterStore.filterOptions[option].includes(item)} onClick={() => { filterStore.updateFilterCamp(option, item) }} >{item}</ButtonList></li>
-                        )
-                      })
-                    ) : (
-                      <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" sx={{ maxWidth: '100%' }}>
-                        {viewFilterOptions[option].map((color: string, index) => {
+
+            {viewFilterTypeOptions !== undefined && viewFilterTypeOptions !== null ? (
+              <>
+                {Object.keys(viewFilterOptions).map((option, index) => {
+                  return (
+                    <>
+                      <span key={`title-${option}`}>{option.toLocaleUpperCase()}</span>
+                      {viewFilterTypeOptions[index] === 'list' ? (
+                        viewFilterOptions[option].map((item, index) => {
                           return (
-                            <Box p={0.01}>
-                              <ColorPicker key={`color_picker-${index}`} onClick={() => { filterStore.updateFilterCamp(option, color) }} color={color} isActive={filterStore.filterOptions[option].includes(color)} ></ColorPicker>
-                            </Box>
+                            <li key={`item-${item}`}><ButtonList key={`button-${item}`} isActive={filterStore.filterOptions[option].includes(item)} onClick={() => { filterStore.updateFilterCamp(option, item) }} >{item}</ButtonList></li>
                           )
-                        })}
-                      </Box>
+                        })
+                      ) : (
+                        <Box display="flex" flexWrap="wrap" p={1} m={1} bgcolor="background.paper" sx={{ maxWidth: '100%' }}>
+                          {viewFilterOptions[option].map((color: string, index) => {
+                            return (
+                              <Box p={0.01}>
+                                <ColorPicker key={`color_picker-${index}`} onClick={() => { filterStore.updateFilterCamp(option, color) }} color={color} isActive={filterStore.filterOptions[option].includes(color)} ></ColorPicker>
+                              </Box>
+                            )
+                          })}
+                        </Box>
 
-                    )}
-                  </>
-                ) : (null)
-
-
-              )
-            })}
+                      )}
+                    </>
+                  )
+                })}
+              </>
+            ) : (null)}
           </FilterCamp>
         </ShopStyles>
       )}
