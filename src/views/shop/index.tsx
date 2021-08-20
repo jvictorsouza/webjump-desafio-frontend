@@ -5,7 +5,6 @@ import Pagination from '@material-ui/lab/Pagination';
 import usePagination from '../../hooks/usePagination';
 import { default as dataMocked } from "./mock-test-data.json";
 import Box from '@material-ui/core/Box';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Shop: React.FC = (...props) => {
   const [pageNumber, setPageNumber] = useState<number>(1);
