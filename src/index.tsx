@@ -10,8 +10,11 @@ import ContextProviderComposer from "./providers/contextProviderComposer";
 import Router from "./routes";
 import * as serviceWorker from "./serviceWorker";
 import { GlobalStyles } from "./styles/global";
+import axios from 'axios';
 
 const App: React.FC = () => {
+  axios.defaults.baseURL = 'http://localhost:8888';
+
   return (
     <ContextProviderComposer contextProviders={Providers}>
       <GlobalStyles />
