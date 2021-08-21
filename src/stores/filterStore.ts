@@ -37,11 +37,9 @@ export default class FilterStore {
             (this.filterOptions['Gênero'].length === 0 &&
             this.filterOptions['Cores'].length === 0 &&
             this.filterOptions['Tipo'].length === 0){
-                console.log('nenhum filtro aplicado')
                 return data.items
             }
             else{
-                console.log('algum filtro aplicado')
                 let filteredData: Array<ProductItems> = []
                 data['items'].forEach(product => {
                     if (data['filters'][0]['gender'] === 'Gênero'){
